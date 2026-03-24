@@ -38,4 +38,8 @@ void cputchar(char c);
 int getche();
 void pixel(int x, int y, BYTE C);
 
+void dibujar_recuadro(int x1, int y1, int x2, int y2, int color_texto, int color_fondo);
+void dibujos_graficos(void);
+void ascii_art(void);
+
 #endif

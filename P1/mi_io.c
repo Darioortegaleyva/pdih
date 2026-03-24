@@ -101,3 +101,133 @@ void pixel(int x, int y, BYTE C) {
     inregs.h.ah = 0x0C;
     int86(0x10, &inregs, &outregs);
 }
+
+
+/* --- EJERCICIO EXTRA 1 --- */
+void dibujar_recuadro(int x1, int y1, int x2, int y2, int color_texto, int color_fondo) {
+    int x, y;
+    int color_original = color_actual;
+    
+    /* Guardamos los colores y establecemos los del recuadro */
+    textcolor(color_texto);
+    textbackground(color_fondo);
+    
+    /* Esquinas */
+    gotoxy(x1, y1);
+    cputchar(201);  
+    
+    gotoxy(x2, y1);
+    cputchar(187); 
+    
+    gotoxy(x1, y2);
+    cputchar(200); 
+    
+    gotoxy(x2, y2);
+    cputchar(188); 
+    
+    /* Línea horizontal */
+    for(x = x1 + 1; x < x2; x++) {
+        gotoxy(x, y1);
+        cputchar(205);  
+        gotoxy(x, y2);
+        cputchar(205);  
+    }
+    
+    /* Líneas verticales */
+    for(y = y1 + 1; y < y2; y++) {
+        gotoxy(x1, y);
+        cputchar(186);  
+        gotoxy(x2, y);
+        cputchar(186);  
+    }
+    
+    /* color original */
+    textcolor(color_original & 0x0F);
+    textbackground((color_original >> 4) & 0x0F);
+}
+
+/* --- EJERCICIO EXTRA 2 --- */
+void dibujos_graficos(void) {
+    int i;
+    
+
+    setvideomode(4);
+    clrscr();  
+    
+    /* Dibujar una línea horizontal */
+    for(i = 10; i < 300; i++) {
+        pixel(i, 50, 1);  
+    }
+    
+    /* Dibujar una línea vertical */
+    for(i = 10; i < 150; i++) {
+        pixel(160, i, 2);  
+    }
+    
+    /* Dibujar un rectángulo */
+    for(i = 50; i < 120; i++) {
+        pixel(i, 80, 3);   /* Borde superior */
+        pixel(i, 120, 3);  /* Borde inferior */
+    }
+    for(i = 80; i < 120; i++) {
+        pixel(50, i, 3);   /* Borde izquierdo */
+        pixel(119, i, 3);  /* Borde derecho */
+    }
+    
+    /* Dibujar una X */
+    for(i = 0; i < 50; i++) {
+        pixel(200 + i, 140 + i, 1);
+        pixel(250 - i, 140 + i, 1);
+    }
+    
+    getche();
+    setvideomode(3);
+
+}
+
+/* --- EJERCICIO EXTRA 3 --- */
+void ascii_art(void) {
+    int color_original = color_actual;
+    
+    setvideomode(3);
+    clrscr();
+    
+    /* Dibujo de un gato */
+    textcolor(YELLOW);
+    gotoxy(35, 5);
+    cputchar('/');
+    cputchar('\\');
+    cputchar('_');
+    cputchar('/');
+    cputchar('\\');
+    
+    gotoxy(34, 6);
+    cputchar('(');
+    cputchar(' ');
+    cputchar('o');
+    cputchar(' ');
+    cputchar('o');
+    cputchar(' ');
+    cputchar(')');
+    
+    gotoxy(35, 7);
+    cputchar('(');
+    cputchar(' ');
+    cputchar('"');
+    cputchar(' ');
+    cputchar('"');
+    cputchar(' ');
+    cputchar(')');
+    
+    gotoxy(34, 8);
+    cputchar(' ');
+    cputchar('(');
+    cputchar('_');
+    cputchar('_');
+    cputchar('_');
+    cputchar(')');
+    cputchar(' '); 
+     
+    getche();
+   
+}

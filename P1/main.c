@@ -26,6 +26,22 @@ int main(){
 	
 	getche();
 	
+	
+	setvideomode(3);
+	clrscr();
+	/* ejercicio 1 extra */
+        dibujar_recuadro(10, 5, 70, 20, YELLOW, BLUE);
+        dibujar_recuadro(20, 8, 60, 17, LIGHTGREEN, RED);
+        dibujar_recuadro(30, 11, 50, 14, LIGHTCYAN, MAGENTA);
+        
+        getche();
+        
+        /*ejercicio 2 extra*/
+        dibujos_graficos();
+        
+        /*ejercicio 3 extra*/
+        ascii_art();
+	
 	setvideomode(3);
 	clrscr();
 	
