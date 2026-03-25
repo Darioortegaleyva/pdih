@@ -1,0 +1,19 @@
+# Compilados y Ejecutables
+*.OBJ
+*.EXE
+*.MAP
+*.LIB
+
+# Archivos de configuración de Borland C (locales)
+*.DSK
+*.PRJ
+*.BAK
+
+# Archivos temporales de intercambio (SWAP)
+*.SWP
+TC00*.SWP
+
+# Archivos ocultos de sistema/editores modernos
+.DS_Store
+Thumbs.db
+*~
