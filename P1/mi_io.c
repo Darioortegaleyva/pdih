@@ -76,12 +76,22 @@ void clrscr() {
 
 void cputchar(char c) {
     union REGS inregs, outregs;
-    inregs.h.ah = 0x09;         /* Funcion para escribir con color */
-    inregs.h.al = c;            /* Caracter a imprimir */
-    inregs.h.bl = color_actual; /* Atributo de color */
-    inregs.h.bh = 0;            /* Pagina de video 0 */
-    inregs.x.cx = 1;            /* Numero de repeticiones */
+    
+    /* 1. Imprimir el caracter con su color */
+    inregs.h.ah = 0x09;         
+    inregs.h.al = c;            
+    inregs.h.bl = color_actual; 
+    inregs.h.bh = 0;            
+    inregs.x.cx = 1;            
     int86(0x10, &inregs, &outregs);
+
+    /* 2. Leer la posicion actual del cursor (ah = 0x03) */
+    inregs.h.ah = 0x03;
+    inregs.h.bh = 0; 
+    int86(0x10, &inregs, &outregs);
+
+    /* 3. Mover el cursor 1 posicion a la derecha (DL = Columna, DH = Fila) */
+    gotoxy(outregs.h.dl + 1, outregs.h.dh);
 }
 
 /* --- FUNCIONES DE ENTRADA --- */
@@ -152,7 +162,7 @@ void dibujos_graficos(void) {
     
 
     setvideomode(4);
-    clrscr();  
+    //clrscr();  
     
     /* Dibujar una línea horizontal */
     for(i = 10; i < 300; i++) {
