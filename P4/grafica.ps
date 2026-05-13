@@ -1,0 +1,70 @@
+%!
+
+
+% PÁGINA 1: TABLA DE DATOS
+
+
+/Helvetica-Bold findfont 20 scalefont setfont
+100 700 moveto
+(Tabla de Resultados - Pagina 1) show
+
+% Dibujar cabecera de la tabla
+/Helvetica-Bold findfont 12 scalefont setfont
+100 650 moveto (ID) show
+200 650 moveto (Nombre) show
+350 650 moveto (Valor) show
+
+% Línea divisoria
+newpath
+100 640 moveto
+450 640 lineto
+stroke
+
+% Datos de la tabla
+/Helvetica findfont 12 scalefont setfont
+100 620 moveto (01) show
+200 620 moveto (Sensor Alpha) show
+350 620 moveto (85.5) show
+
+100 600 moveto (02) show
+200 600 moveto (Sensor Beta) show
+350 600 moveto (42.1) show
+
+100 580 moveto (03) show
+200 580 moveto (Sensor Gamma) show
+350 580 moveto (67.9) show
+
+showpage 
+
+
+% PÁGINA 2: GRÁFICA 
+
+
+/Helvetica-Bold findfont 20 scalefont setfont
+100 700 moveto
+(Grafica de Rendimiento - Pagina 2) show
+
+% Dibujar ejes
+newpath
+100 400 moveto
+100 600 lineto 
+100 400 moveto
+400 400 lineto 
+stroke
+
+% Dibujar la gráfica
+newpath
+100 400 moveto   
+150 550 lineto   
+200 430 lineto   
+250 580 lineto   
+300 450 lineto   
+350 520 lineto   
+400 400 lineto   
+
+2 setlinewidth
+0 0 1 setrgbcolor 
+stroke
+
+showpage 
+

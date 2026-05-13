@@ -1,0 +1,47 @@
+%!
+
+% --- DIBUJO DEL LOGOTIPO ---
+newpath
+180 400 70 0 360 arc   
+0.85 setgray           
+fill                   
+
+newpath
+180 400 70 0 360 arc    
+0 setgray              
+2 setlinewidth         
+stroke                  
+
+% --- TEXTO DE LA TARJETA ---
+
+% Nombre
+/Helvetica-Bold findfont
+22 scalefont setfont    
+300 425 moveto          
+(Drago Kovacevic) show  
+
+% Cargo
+/Helvetica findfont
+14 scalefont setfont
+0.5 setgray             
+300 405 moveto
+(Ejecutivo de Cuentas) show
+
+% Información de contacto
+/Helvetica findfont
+11 scalefont setfont
+0 setgray               
+
+300 375 moveto
+(Pdeis Castella 141) show
+300 360 moveto
+(Local 2 - Edificio Curso V) show
+300 345 moveto
+(28046 Maand) show
+300 325 moveto
+(Tel. 914 174550 / 660996 224) show
+300 310 moveto
+(dragoliseroteles) show
+
+showpage                
+

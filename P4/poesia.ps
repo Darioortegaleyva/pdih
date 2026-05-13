@@ -1,0 +1,43 @@
+%!
+
+% --- DIBUJO DEL CORAZÓN (Curvas de Bézier optimizadas) ---
+newpath
+150 420 moveto                
+
+
+150 500 250 500 250 400 curveto
+250 320 150 280 150 220 curveto
+
+
+150 280 50 320 50 400 curveto 
+50 500 150 500 150 420 curveto
+closepath
+
+1 0 0 setrgbcolor             
+fill
+
+% --- POESÍA (Negrita + Degradado de gris claro a negro) ---
+/Helvetica-Bold findfont
+14 scalefont setfont
+
+% Línea 1: Gris claro (0.7)
+0.7 setgray
+300 440 moveto
+(La belleza no es nada, no permanece.) show
+
+% Línea 2: Gris medio (0.45)
+0.45 setgray
+300 420 moveto
+(No sabes la suerte que tienes sin belleza.) show
+
+% Línea 3: Gris oscuro (0.2)
+0.2 setgray
+300 400 moveto
+(Porque si le gustas a alguien,) show
+
+% Línea 4: Negro puro (0)
+0 setgray
+300 380 moveto
+(sabes que es por otra cosa.) show
+
+showpage
