@@ -48,5 +48,3 @@ El sistema ha sido validado mediante tres pruebas de fuego que se realizarán du
 * **Ejemplo:** Pulsación corta (punto) + Pulsación larga (raya) + Silencio de 1s.
 * **Resultado:** ✅ El monitor serie muestra con precisión `.- -> A`. El filtro de 50ms evita que las vibraciones mecánicas del botón generen señales falsas.
 
-## 6. Conclusiones
-El trabajo cumple con los objetivos de la asignatura PDIH al integrar conceptos de temporización de sistemas (`millis`), gestión de arrays de caracteres y control de periféricos de hardware. La capacidad de interactuar mediante el puerto serie y hardware físico simultáneamente aporta un valor añadido al proyecto.
