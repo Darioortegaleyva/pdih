@@ -22,6 +22,7 @@ El montaje se basa en una configuración de entrada/salida digital:
 * **Salida Sonora (Pin 8):** Zumbador (Buzzer) piezoeléctrico.
 
 **Esquema de conexiones:**
+
 ![Esquema del circuito Morse](simulador_morse.jpeg)
 
 ## 4. Código Fuente
