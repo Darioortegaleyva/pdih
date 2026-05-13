@@ -21,6 +21,9 @@ El montaje se basa en una configuración de entrada/salida digital:
 * **Salida Visual (Pin 13):** LED integrado y/o externo.
 * **Salida Sonora (Pin 8):** Zumbador (Buzzer) piezoeléctrico.
 
+**Esquema de conexiones:**
+![Esquema del circuito Morse](simulador_morse.jpeg)
+
 ## 4. Código Fuente
 El código principal del sistema, que permite la comunicación bidireccional (PC a Arduino y Arduino a PC), se encuentra en la carpeta `codigo_morse` de este directorio. 
 
