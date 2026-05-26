@@ -57,3 +57,42 @@ else:
     print("\n[ALERTA] Los archivos tienen frecuencias de muestreo distintas. Se usará la del nombre.")
     datos_basico = np.concatenate((datos_n, datos_a))
     frecuencia_basico = frecuencia_n
+    
+
+
+# 5: Dibujar la forma de onda combinada y reproducir
+print("\n=== EJERCICIO 5: DIBUJAR Y REPRODUCIR EL RESULTADO ===")
+
+
+plt.figure(figsize=(10, 4))
+plt.plot(datos_basico, color="purple")
+plt.title("Forma de onda: Nombre y Apellido Unidos")
+plt.xlabel("Muestras")
+plt.ylabel("Amplitud")
+plt.grid(True)
+print("Mostrando gráfica del sonido unido... (Ciérrala para escuchar el audio)")
+plt.show()  
+
+
+import os
+
+print("Reproduciendo el sonido combinado por los altavoces...")
+
+wavfile.write("temp_combinado.wav", frecuencia_basico, datos_basico)
+
+
+os.system("aplay temp_combinado.wav")
+
+
+if os.path.exists("temp_combinado.wav"):
+    os.remove("temp_combinado.wav")
+
+
+
+# 6: Almacenar el sonido resultante de forma definitiva
+
+print("\n=== EJERCICIO 6: ALMACENAR EL ARCHIVO ===")
+
+# Guardamos el archivo final con el nombre exacto que exige la práctica
+wavfile.write("basico.wav", frecuencia_basico, datos_basico)
+print("[OK] ¡Archivo 'basico.wav' creado y guardado con éxito!")
