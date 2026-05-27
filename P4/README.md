@@ -1,7 +1,8 @@
 # Práctica 4: El lenguaje Postscript
 
 **Autores:** Inés Prados y Darío Ortega
-**Asignatura:** Programación de Dispositivos e Interfaz de Hardware (PDIH)
+
+**Asignatura:** Periféricos y Dispositivos de Interfaz Humana (PDIH)
 
 ---
 
