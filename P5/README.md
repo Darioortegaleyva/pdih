@@ -1,6 +1,6 @@
 # Práctica 5: Experimentación con el sistema de salida de sonido
 
-**Autores:** Inés Prados y Darío Ortega Leyva  
+**Autores:** Inés Prados y Darío Ortega  
 **Asignatura:** Periféricos y Dispositivos de Interfaz Humana (PDIH)
 
 ---
