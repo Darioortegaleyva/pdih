@@ -1,7 +1,7 @@
 # Práctica 6: Reconocimiento de Imágenes con OpenCV
 
 **Autores:** Inés Prados y Darío Ortega  
-**Asignatura:** Programación de Dispositivos e Interfaz de Hardware (PDIH)
+**Asignatura:** Periféricos y Dispositivos de Interfaz Humana (PDIH)
 
 ---
 
