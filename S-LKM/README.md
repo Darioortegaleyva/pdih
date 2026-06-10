@@ -3,29 +3,29 @@
 **Asignatura:** Periféricos y Dispositivos de Interfaz Humana (PDIH)
 
 #### 1. Objetivos del Seminario
-[cite_start]El objetivo principal de esta práctica ha sido estudiar el sistema de módulos cargables del kernel (LKM) de Linux[cite: 193]. [cite_start]Hemos desarrollado un módulo sencillo en lenguaje C, procediendo a cargarlo y descargarlo dinámicamente en el kernel sin necesidad de reiniciar el sistema, verificando su comportamiento a través de los registros (logs)[cite: 194, 195].
+El objetivo principal de esta práctica ha sido estudiar el sistema de módulos cargables del kernel (LKM) de Linux. Hemos desarrollado un módulo sencillo en lenguaje C, procediendo a cargarlo y descargarlo dinámicamente en el kernel sin necesidad de reiniciar el sistema, verificando su comportamiento a través de los registros (logs).
 
 #### 2. Preparación del Entorno (Vagrant)
-[cite_start]Puesto que inyectar módulos en el kernel puede ser peligroso y provocar el bloqueo del sistema, hemos utilizado una máquina virtual (Vagrant con Ubuntu 22.04 LTS) como entorno seguro[cite: 50]. 
+Puesto que inyectar módulos en el kernel puede ser peligroso y provocar el bloqueo del sistema, hemos utilizado una máquina virtual (Vagrant con Ubuntu 22.04 LTS) como entorno seguro. 
 
 Para poder compilar nuestro código contra el núcleo de Linux, preparamos el sistema instalando las cabeceras y las herramientas de construcción:
 * `sudo apt-get install linux-headers-$(uname -r)`
 * `sudo apt-get install build-essential`
 
 #### 3. Código y Compilación
-[cite_start]Hemos utilizado los archivos `hello.c` y `Makefile` proporcionados en la documentación del seminario[cite: 69, 115]. 
+Hemos utilizado los archivos `hello.c` y `Makefile` proporcionados en la documentación del seminario. 
 
-[cite_start]El archivo fuente en C utiliza la función `printk()` en lugar de las llamadas estándar de usuario para comunicarse con el espacio del núcleo[cite: 59, 66]. [cite_start]Al ejecutar el comando `make`, el código se ha compilado exitosamente, generando nuestro objeto de módulo `hello.ko`[cite: 121].
+El archivo fuente en C utiliza la función `printk()` en lugar de las llamadas estándar de usuario para comunicarse con el espacio del núcleo. Al ejecutar el comando `make`, el código se ha compilado exitosamente, generando nuestro objeto de módulo `hello.ko`.
 
 #### 4. Pruebas de Carga y Descarga del Módulo LKM
-[cite_start]A continuación, detallamos las pruebas realizadas usando las herramientas del kernel[cite: 144]:
+A continuación, detallamos las pruebas realizadas usando las herramientas del kernel:
 
 * **Inserción:** Ejecutamos `sudo insmod hello.ko` para inyectar el módulo.
 * **Comprobación:** Lanzamos `lsmod | grep hello` y el sistema nos devolvió `hello 16384 0`, confirmando la reserva de memoria.
-* [cite_start]**Metadatos:** Al usar `modinfo hello.ko` verificamos la firma del módulo (Autor: Derek Molloy, Licencia: GPL, Versión 0.1)[cite: 151, 157, 158].
-* [cite_start]**Revisión del Log (Entrada):** Ejecutando `sudo dmesg | tail -n 5` observamos que la rutina de inicialización registró correctamente el mensaje: `[ 488.639084] EBB: Hello world from the BBB LKM!`[cite: 181].
-* [cite_start]**Extracción:** Eliminamos el módulo de manera segura con `sudo rmmod hello`[cite: 175].
-* [cite_start]**Revisión del Log (Salida):** Revisamos de nuevo el registro y confirmamos la ejecución de la rutina de limpieza: `[ 511.919901] EBB: Goodbye world from BBB LKM!`[cite: 182].
+* **Metadatos:** Al usar `modinfo hello.ko` verificamos la firma del módulo (Autor: Derek Molloy, Licencia: GPL, Versión 0.1).
+* **Revisión del Log (Entrada):** Ejecutando `sudo dmesg | tail -n 5` observamos que la rutina de inicialización registró correctamente el mensaje: `[ 488.639084] EBB: Hello world from the BBB LKM!`.
+* **Extracción:** Eliminamos el módulo de manera segura con `sudo rmmod hello`.
+* **Revisión del Log (Salida):** Revisamos de nuevo el registro y confirmamos la ejecución de la rutina de limpieza: `[ 511.919901] EBB: Goodbye world from BBB LKM!`.
 
 ![Proceso de carga y descarga en la terminal](captura_terminal_lkm.png)
 
