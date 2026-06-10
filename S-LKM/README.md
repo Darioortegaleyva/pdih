@@ -1,5 +1,6 @@
 ### Seminario 4: Módulos Cargables del Kernel (LKM)
 **Autores:** Darío Ortega e Inés Prados
+
 **Asignatura:** Periféricos y Dispositivos de Interfaz Humana (PDIH)
 
 #### 1. Objetivos del Seminario
