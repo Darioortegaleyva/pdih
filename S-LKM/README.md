@@ -27,7 +27,7 @@ Para poder compilar nuestro código contra el núcleo de Linux, preparamos el si
 * [cite_start]**Extracción:** Eliminamos el módulo de manera segura con `sudo rmmod hello`[cite: 175].
 * [cite_start]**Revisión del Log (Salida):** Revisamos de nuevo el registro y confirmamos la ejecución de la rutina de limpieza: `[ 511.919901] EBB: Goodbye world from BBB LKM!`[cite: 182].
 
-![Proceso de carga y descarga en la terminal](img/captura_terminal_lkm.png)
+![Proceso de carga y descarga en la terminal](captura_terminal_lkm.png)
 
 #### 5. Observaciones y Curiosidades
 Durante el proceso de compilación con `make`, el sistema nos arrojó la siguiente advertencia:
